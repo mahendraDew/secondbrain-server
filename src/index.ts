@@ -38,7 +38,6 @@ app.post('/tag', async (req: Request, res: Response) => {
 
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/content', contentRouter);
-
 app.use('/api/v1/brain', brainRouter);
 
 function main(){
