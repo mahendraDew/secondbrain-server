@@ -82,7 +82,7 @@ userRouter.post('/signin', async(req: Request, res: Response)=>{
            }
        })
     }else{
-       res.status(405).json({
+       res.status(400).json({
            msg: "incorrect creadentials"
        })
     }
