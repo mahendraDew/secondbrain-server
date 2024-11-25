@@ -1,5 +1,5 @@
 import mongoose, { model, Schema } from 'mongoose'
-import { boolean } from 'zod'
+// import { boolean } from 'zod'
 
 const UserSchema = new Schema({
   email: { type: String, require: true, unique: true },
@@ -12,12 +12,13 @@ const TagSchema = new Schema({
 })
 
 //types of content that can be added
-const contentTypes = ['image', 'video', 'article', 'audio']
+const contentTypes = ['image', 'video', 'article','link', 'tweet']
 
 const ContentSchema = new Schema({
   link: { type: String, required: true },
   type: { type: String, enum: contentTypes, required: true },
   title: { type: String, required: true },
+  description: {type: String, required: true},
   tags: [{ type: mongoose.Types.ObjectId, ref: 'tags' }],
   date: Date,
   userId: { type: mongoose.Types.ObjectId, ref: 'users', required: true }

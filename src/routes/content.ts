@@ -11,12 +11,13 @@ contentRouter.get('/test', (req: Request, res: Response) => {
 
 contentRouter.post('/create', async (req: Request, res: Response) => {
   try {
-    const { link, type, title, tags, userId } = req.body
+    const { link, type, title, description, tags, userId } = req.body
 
     await ContentModel.create({
       link,
       type,
       title,
+      description,
       date: Date.now(),
       tags,
       userId

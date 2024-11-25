@@ -98,7 +98,7 @@ interface User {
 interface CustomRequest extends Request {
     user?: User;
 }
-userRouter.post('/contents', userMiddleware, async(req: CustomRequest, res: Response): Promise<void> =>{
+userRouter.get('/contents', userMiddleware, async(req: CustomRequest, res: Response): Promise<void> =>{
 
     try {
         const userId = req.user?._id;
