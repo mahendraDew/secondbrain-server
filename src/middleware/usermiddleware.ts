@@ -37,7 +37,7 @@ async function userMiddleware(req: CustomRequest, res: Response, next: NextFunct
 
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(401).json({
             msg:"Token is not valid"
         })
