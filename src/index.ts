@@ -35,3 +35,5 @@ function main(){
     })
 }
 main()
+
+export default app;
