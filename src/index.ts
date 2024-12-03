@@ -27,10 +27,10 @@ app.use('/api/v1/content', contentRouter);
 app.use('/api/v1/tag', tagRouter)
 app.use('/api/v1/brain', brainRouter);
 
-function main(){
+async function main(){
+    await connectDB();
     app.listen(PORT, ()=>{
         console.log(`Server is running on ${PORT} at http://localhost:3000`)
-        connectDB()
         
     })
 }
